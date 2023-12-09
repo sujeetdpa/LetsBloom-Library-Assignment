@@ -118,4 +118,13 @@ public class LibraryExceptionHandler extends ResponseEntityExceptionHandler {
         exceptionResponse.setTimestamp(LocalDateTime.now());
         return new ResponseEntity<>(exceptionResponse, status);
     }
+    @ExceptionHandler({RuntimeException.class})
+    public ResponseEntity<LibraryExceptionResponse> handleException(RuntimeException exception){
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        LibraryExceptionResponse exceptionResponse = new LibraryExceptionResponse();
+        exceptionResponse.setError(exception.getMessage());
+        exceptionResponse.setStatus(status.value());
+        exceptionResponse.setTimestamp(LocalDateTime.now());
+        return new ResponseEntity<>(exceptionResponse, status);
+    }
 }

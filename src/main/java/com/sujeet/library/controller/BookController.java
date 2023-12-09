@@ -1,14 +1,12 @@
 package com.sujeet.library.controller;
 
 import com.sujeet.library.beans.request.NewBookRequest;
-import com.sujeet.library.beans.request.UpdateBookRequest;
 import com.sujeet.library.beans.response.BookResponse;
 import com.sujeet.library.services.BookService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,7 +35,7 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BookResponse> updateBook(@PathVariable("id") Long id , @RequestBody UpdateBookRequest bookRequest){
+    public ResponseEntity<BookResponse> updateBook(@PathVariable("id") Long id , @RequestBody NewBookRequest bookRequest){
         BookResponse response=bookService.updateBook(id,bookRequest);
         return new ResponseEntity<>(response,HttpStatus.OK);
     }

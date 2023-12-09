@@ -1,7 +1,6 @@
 package com.sujeet.library.services.impl;
 
 import com.sujeet.library.beans.request.NewBookRequest;
-import com.sujeet.library.beans.request.UpdateBookRequest;
 import com.sujeet.library.beans.response.BookResponse;
 import com.sujeet.library.exception.not.found.BookNotFoundException;
 import com.sujeet.library.mapper.BookMapper;
@@ -48,7 +47,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookResponse updateBook(Long id, UpdateBookRequest bookRequest) {
+    public BookResponse updateBook(Long id, NewBookRequest bookRequest) {
         Book book = bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException("Book not found with id: " + id));
         Optional.ofNullable(bookRequest.getTitle()).ifPresent(book::setTitle);
         Optional.ofNullable(bookRequest.getDescription()).ifPresent(book::setDescription);
