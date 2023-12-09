@@ -1,7 +1,6 @@
 package com.sujeet.library.exception.handlers;
 
 import com.sujeet.library.exception.LibraryException;
-import com.sujeet.library.exception.bad.request.LibraryBadRequestException;
 import com.sujeet.library.exception.not.found.LibraryNotFoundException;
 import jakarta.validation.ValidationException;
 import org.springframework.core.Ordered;
@@ -40,15 +39,6 @@ public class LibraryExceptionHandler extends ResponseEntityExceptionHandler {
     }
     @ExceptionHandler({SQLIntegrityConstraintViolationException.class})
     public ResponseEntity<LibraryExceptionResponse> handleSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException exception){
-        HttpStatus status = HttpStatus.BAD_REQUEST;
-        LibraryExceptionResponse exceptionResponse = new LibraryExceptionResponse();
-        exceptionResponse.setError(exception.getMessage());
-        exceptionResponse.setStatus(status.value());
-        exceptionResponse.setTimestamp(LocalDateTime.now());
-        return new ResponseEntity<>(exceptionResponse, status);
-    }
-    @ExceptionHandler({LibraryBadRequestException.class})
-    public final ResponseEntity<LibraryExceptionResponse> handleBadRequestException(LibraryBadRequestException exception) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         LibraryExceptionResponse exceptionResponse = new LibraryExceptionResponse();
         exceptionResponse.setError(exception.getMessage());
