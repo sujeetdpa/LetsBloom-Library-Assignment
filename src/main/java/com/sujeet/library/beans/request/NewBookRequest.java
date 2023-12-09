@@ -18,7 +18,7 @@ public class NewBookRequest {
     private String title;
 
     @NotBlank
-    private String sbin;
+    private String isbn;
 
     private String description;
 

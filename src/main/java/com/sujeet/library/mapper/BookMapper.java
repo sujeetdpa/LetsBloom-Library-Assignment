@@ -13,7 +13,7 @@ public class BookMapper {
         Book book=new Book();
         Optional.ofNullable(bookRequest.getTitle()).ifPresent(book::setTitle);
         Optional.ofNullable(bookRequest.getDescription()).ifPresent(book::setDescription);
-        Optional.ofNullable(bookRequest.getSbin()).ifPresent(book::setSbin);
+        Optional.ofNullable(bookRequest.getIsbn()).ifPresent(book::setIsbn);
         Optional.ofNullable(bookRequest.getAuthor()).ifPresent(book::setAuthor);
         Optional.ofNullable(bookRequest.getPublicationDate()).ifPresent(book::setPublicationDate);
         return book;
@@ -24,7 +24,7 @@ public class BookMapper {
         Optional.ofNullable(book.getId()).ifPresent(bookResponse::setId);
         Optional.ofNullable(book.getTitle()).ifPresent(bookResponse::setTitle);
         Optional.ofNullable(book.getDescription()).ifPresent(bookResponse::setDescription);
-        Optional.ofNullable(book.getSbin()).ifPresent(bookResponse::setSbin);
+        Optional.ofNullable(book.getIsbn()).ifPresent(bookResponse::setSbin);
         Optional.ofNullable(book.getAuthor()).ifPresent(bookResponse::setAuthor);
         Optional.ofNullable(book.getPublicationDate()).ifPresent(bookResponse::setPublicationDate);
         Optional.ofNullable(book.getCreationTimestamp()).ifPresent(bookResponse::setCreationTimestamp);

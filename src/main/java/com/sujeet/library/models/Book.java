@@ -19,8 +19,9 @@ public class Book {
     private String title;
     private String description;
 
+    //Unique id for every book
     @Column(unique = true)
-    private String sbin;
+    private String isbn;
 
     private String author;
     private LocalDate publicationDate;

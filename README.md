@@ -28,7 +28,7 @@ An REST Api application to manage books in a library.
                 "id": 1,
                 "title": "Java",
                 "description": "Core Java Book",
-                "sbin": "java_6t4376ty",
+                "isbn": "java_6t4376ty",
                 "author": "Java Author updated",
                 "publicationDate": "2020-12-06",
                 "creationTimestamp": "2023-12-09T19:17:35.481605"
@@ -37,7 +37,7 @@ An REST Api application to manage books in a library.
                 "id": 5,
                 "title": "Advance Java",
                 "description": "Core Java Book",
-                "sbin": "adv_java_6t4376ty",
+                "isbn": "adv_java_6t4376ty",
                 "author": "Java Adv Author",
                 "publicationDate": "2020-01-06",
                 "creationTimestamp": "2023-12-09T19:51:53.216437"
@@ -53,7 +53,7 @@ An REST Api application to manage books in a library.
         Request: {
             "title":"Advance Java",
             "description":"Core Java Book",
-            "sbin":"adv_java_6t4376ty",
+            "isbn":"adv_java_6t4376ty",
             "author":"Java Adv Author",
             "publicationDate":"2020-01-06"
         }
@@ -61,7 +61,7 @@ An REST Api application to manage books in a library.
             "id": 5,
             "title": "Advance Java",
             "description": "Core Java Book",
-            "sbin": "adv_java_6t4376ty",
+            "isbn": "adv_java_6t4376ty",
             "author": "Java Adv Author",
             "publicationDate": "2020-01-06",
             "creationTimestamp": "2023-12-09T19:51:53.216437"
@@ -71,7 +71,7 @@ An REST Api application to manage books in a library.
         Request: {
             "title":null,
             "description":null,
-            "sbin":null,
+            "isbn":null,
             "author":null,
             "publicationDate":null
         }
@@ -93,7 +93,7 @@ An REST Api application to manage books in a library.
             "id": 5,
             "title": "Advance Java Update",
             "description": "Core Java Book",
-            "sbin": "adv_java_6t4376ty",
+            "isbn": "adv_java_6t4376ty",
             "author": "Java Adv Author Update",
             "publicationDate": "2020-01-06",
             "creationTimestamp": "2023-12-09T19:51:53.216437"
