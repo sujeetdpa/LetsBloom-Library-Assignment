@@ -91,10 +91,10 @@ An REST Api application to manage books in a library.
         }
         Response: {
             "id": 5,
-            "title": "Advance Java",
+            "title": "Advance Java Update",
             "description": "Core Java Book",
             "sbin": "adv_java_6t4376ty",
-            "author": "Java Adv Author",
+            "author": "Java Adv Author Update",
             "publicationDate": "2020-01-06",
             "creationTimestamp": "2023-12-09T19:51:53.216437"
         }
