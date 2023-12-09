@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.net.ConnectException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -101,5 +103,19 @@ public class LibraryExceptionHandler extends ResponseEntityExceptionHandler {
         exceptionResponse.setStatus(statusResponse.value());
         exceptionResponse.setTimestamp(LocalDateTime.now());
         return new ResponseEntity<>(exceptionResponse, headers, statusResponse);
+    }
+    @ExceptionHandler(value = {CannotCreateTransactionException.class})
+    public ResponseEntity<LibraryExceptionResponse> cannotCreateTransactionException(CannotCreateTransactionException exception, WebRequest request) {
+        HttpStatus status=null;
+        if (exception.contains(ConnectException.class)) {
+            status=HttpStatus.SERVICE_UNAVAILABLE;
+        }else {
+            status=HttpStatus.INTERNAL_SERVER_ERROR;
+        }
+        LibraryExceptionResponse exceptionResponse = new LibraryExceptionResponse();
+        exceptionResponse.setError(exception.getMessage());
+        exceptionResponse.setStatus(status.value());
+        exceptionResponse.setTimestamp(LocalDateTime.now());
+        return new ResponseEntity<>(exceptionResponse, status);
     }
 }
