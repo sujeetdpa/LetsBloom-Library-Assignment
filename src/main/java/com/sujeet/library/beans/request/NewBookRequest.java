@@ -14,17 +14,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NewBookRequest {
-    @NotBlank(message = "Book title cannot be empty.")
+    @NotBlank
     private String title;
 
-    @NotBlank(message = "SBIN cannot be empty.")
+    @NotBlank
     private String sbin;
 
     private String description;
 
-    @NotBlank(message = "Book author cannot be empty")
+    @NotBlank
     private String author;
 
-    @NotNull(message = "Publication date cannot be null")
+    @NotNull
     private LocalDate publicationDate;
 }

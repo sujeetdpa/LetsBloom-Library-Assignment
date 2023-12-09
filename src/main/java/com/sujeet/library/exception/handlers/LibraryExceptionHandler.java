@@ -77,7 +77,7 @@ public class LibraryExceptionHandler extends ResponseEntityExceptionHandler {
         String error;
         while (var10.hasNext()) {
             FieldError fieldError = (FieldError) var10.next();
-            error = fieldError.getField() + ", " + fieldError.getDefaultMessage();
+            error = fieldError.getField() + ": " + fieldError.getDefaultMessage();
             errors.add(error);
         }
 
@@ -85,7 +85,7 @@ public class LibraryExceptionHandler extends ResponseEntityExceptionHandler {
 
         while (var10.hasNext()) {
             ObjectError globalError = (ObjectError) var10.next();
-            error = globalError.getObjectName() + ", " + globalError.getDefaultMessage();
+            error = globalError.getObjectName() + ": " + globalError.getDefaultMessage();
             errors.add(error);
         }
         LibraryExceptionResponse exceptionResponse = new LibraryExceptionResponse();

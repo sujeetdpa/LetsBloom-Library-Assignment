@@ -76,9 +76,9 @@ An REST Api application to manage books in a library.
             "publicationDate":null
         }
         Response: {
-            "timestamp": "09-12-2023 09:20:30",
+            "timestamp": "09-12-2023 10:31:55",
             "status": 400,
-            "error": "[publicationDate, Publication date cannot be null, author, Book author cannot be empty, sbin, SBIN cannot be empty., title, Book title cannot be empty.]"
+            "error": "[publicationDate: must not be null, sbin: must not be blank, title: must not be blank, author: must not be blank]"
         }
 
     3. Updating a book: Update a book with given id and new details.
