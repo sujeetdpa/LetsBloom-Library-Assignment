@@ -16,7 +16,7 @@ public class BookResponse {
     private Long id;
     private String title;
     private String description;
-    private String sbin;
+    private String isbn;
     private String author;
     private LocalDate publicationDate;
     private LocalDateTime creationTimestamp;

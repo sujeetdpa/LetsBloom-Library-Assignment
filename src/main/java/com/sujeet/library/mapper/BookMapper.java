@@ -24,7 +24,7 @@ public class BookMapper {
         Optional.ofNullable(book.getId()).ifPresent(bookResponse::setId);
         Optional.ofNullable(book.getTitle()).ifPresent(bookResponse::setTitle);
         Optional.ofNullable(book.getDescription()).ifPresent(bookResponse::setDescription);
-        Optional.ofNullable(book.getIsbn()).ifPresent(bookResponse::setSbin);
+        Optional.ofNullable(book.getIsbn()).ifPresent(bookResponse::setIsbn);
         Optional.ofNullable(book.getAuthor()).ifPresent(bookResponse::setAuthor);
         Optional.ofNullable(book.getPublicationDate()).ifPresent(bookResponse::setPublicationDate);
         Optional.ofNullable(book.getCreationTimestamp()).ifPresent(bookResponse::setCreationTimestamp);
